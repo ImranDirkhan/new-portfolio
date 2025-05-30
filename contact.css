@@ -1,0 +1,181 @@
+:root {
+  /* COLORS */
+
+  --white-100: rgb(255, 255, 255);
+  --white-97: rgb(247, 247, 247);
+  --white-90: rgb(230, 230, 230);
+  --white-80: rgb(204, 204, 204);
+
+  --white-100-rgb: 255, 255, 255;
+  --white-97-rgb: 247, 247, 247;
+  --white-90-rgb: 230, 230, 230;
+  --white-80-rgb: 204, 204, 204;
+
+  --green-98: rgb(245, 255, 249);
+  --green-45: rgb(0, 230, 99);
+  --green-35: rgb(0, 179, 77);
+
+  --orange-98: rgb(255, 253, 245);
+  --orange-50: rgb(255, 183, 0);
+
+  --blue-98: rgb(245, 253, 255);
+  --blue-50: rgb(0, 208, 255);
+
+  --purple-98: rgb(251, 245, 255);
+  --purple-65: rgb(190, 77, 255);
+
+  --red-98: rgb(255, 245, 247);
+  --red-50: rgb(255, 0, 76);
+
+  --black-30: rgb(77, 77, 77);
+  --black-0: rgb(0, 0, 0);
+
+  --black-30-rgb: 77, 77, 77;
+  --black-0-rgb: 0, 0, 0;
+}
+
+.contact-cards-cont {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.contact-card {
+  height: 70px;
+  background-color: var(--white-100);
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 1.2rem;
+
+  overflow: hidden;
+
+  position: relative;
+}
+
+.contact-card-logo-bg {
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  background-color: rgba(var(--black-30-rgb), 0.1);
+
+  position: absolute;
+  left: -1.6rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 1rem;
+}
+
+.contact-card-logo-bg img {
+  z-index: 1;
+  height: 3rem;
+  width: 3rem;
+  opacity: 0.4;
+}
+
+.call {
+  background-color: var(--orange-98);
+}
+
+.linkedin {
+  background-color: var(--blue-98);
+}
+
+.instagram {
+  background-color: var(--purple-98);
+}
+
+.twitter {
+  background-color: var(--red-98);
+}
+
+.facebook {
+  background-color: var(--green-98);
+}
+
+.contact-card-name {
+  margin-left: 5.6rem;
+}
+
+.contact-card-arrow {
+  height: 1.2rem;
+  width: 1.2rem;
+}
+
+/* --- */
+.message-box {
+  width: 100%;
+  background-color: var(--white-100);
+  border-radius: 12px;
+  padding: 1.2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin-top: 2rem;
+}
+
+.message-box form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "name email"
+    "message message"
+    "submit-btn submit-btn";
+  gap: 1rem;
+}
+
+.message-box input {
+  height: 2.4rem;
+  background-color: var(--white-97);
+  border: none;
+  border-radius: 8px;
+  padding: 0 0.8rem;
+  font-size: 1rem;
+}
+
+.message-box textarea {
+  min-height: 8rem;
+  background-color: var(--white-97);
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+}
+
+.name-input {
+  grid-area: name;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.email-input {
+  grid-area: email;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.message-input {
+  grid-area: message;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+#submit-btn {
+  grid-area: submit-btn;
+  border-radius: 1000px;
+  margin-top: 1rem;
+  background-color: var(--black-0);
+  color: var(--white-100);
+}

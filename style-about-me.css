@@ -1,0 +1,53 @@
+.more-about-me-cont {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 6fr 2fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "more-about-me-text-cont more-about-me-img"
+    "more-about-me-text-cont more-about-me-img"
+    "more-about-me-text-cont more-about-me-hobbies";
+  gap: 1rem;
+  /* align-items: stretch;
+  justify-items: stretch; */
+}
+
+.more-about-me-text-cont {
+  grid-area: more-about-me-text-cont;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.more-about-me-text {
+  background-color: var(--white-100);
+  padding: 1rem;
+  border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.more-about-me-text p {
+  font-size: 1rem;
+}
+
+.more-about-me-img {
+  grid-area: more-about-me-img;
+  border-radius: 12px;
+}
+
+.more-about-me-img img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+.more-about-me-hobbies {
+  grid-area: more-about-me-hobbies;
+  border-radius: 12px;
+  border: 2px solid;
+}
