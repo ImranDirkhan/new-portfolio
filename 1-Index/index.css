@@ -34,47 +34,7 @@
   --black-0-rgb: 0, 0, 0;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Avenir LT Std", sans-serif;
-}
-
-/* GENERAL */
-
-.btn {
-  box-shadow: 0 0 0 2px var(--black-0);
-  background: transparent;
-  color: var(--black-0);
-  padding: 4px 16px;
-  height: 36px;
-  font-size: 1rem;
-  font-weight: 700;
-  border: none;
-  border-radius: 1000px;
-  /* letter-spacing: 0.75px; */
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn::after {
-  content: "";
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  width: 0;
-  height: 100%;
-  color: var(--white-100);
-  background-color: var(--black-0);
-  transition: all 0.25s ease-in-out;
-  z-index: -1;
-}
-
-.btn:hover::after {
-  width: 100%;
-}
+/* ---------- GENERAL ---------- */
 
 .hidden {
   visibility: hidden;
@@ -90,76 +50,82 @@
   font-weight: 300;
 }
 
-.link-1 {
-  text-decoration: none;
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--black-0);
-  display: flex;
-  align-items: center;
-  justify-content: last baseline;
-  gap: 4px;
-  width: fit-content;
-}
+/* ------------------------------- */
 
-.link-1 .link-arrow {
-  font-size: 1.4rem;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
 }
-
-/* ------- */
 
 body {
   height: 100%;
   width: 100%;
   background-color: var(--white-97);
-  padding: 1.2rem;
-  display: flex;
+  overflow-x: hidden;
 }
 
 header {
+  width: 24%;
+  height: 100vh;
   position: fixed;
-  /* overflow-y: auto; */
-  height: 95vh;
-  background-color: var(--white-100);
-  /* border: 2px solid red; */
-  width: 25%;
-  padding: 1.2rem;
-  border-radius: 12px;
-
-  /* overflow: scroll; */
+  left: 0;
+  top: 0;
+  z-index: 100;
 
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  /* flex: 1 0 0px; */
+  align-items: center;
+  justify-content: center;
+  /* flex: none; */
 }
 
-main {
-  position: relative;
-  left: 25%;
-  width: 75%;
-  margin: 0rem 2rem;
-  padding: 1rem 1.2rem;
-  /* border: 2px solid red; */
+.header-content {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+
+nav {
+  width: 100%;
+  height: 100%;
+  /* position: relative; */
+  background-color: var(--white-100);
+  padding: 1.2rem;
+  border-radius: 12px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 2.4rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+nav::-webkit-scrollbar {
+  display: none; /* Chrome/ Safar */
 }
 
 .profile {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
   gap: 1rem;
 }
 
 .profile .my-pic {
   height: 48px;
+  width: 48px;
+  border-radius: 100%;
+  object-fit: cover;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 100%;
 }
 
 .profile .name-and-tagline {
@@ -169,27 +135,27 @@ main {
 }
 
 .profile .name {
-  font-size: 20px;
+  font-size: 1.05rem;
   line-height: 1.2;
   font-weight: 600;
   color: var(--black-0);
 }
 
 .profile .tagline {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
+  color: var(--black-30);
 }
 
 .nav-menu {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  /* border: 2px solid red; */
+  gap: 0.75rem;
 }
+
 .nav-menu .menu-item {
-  /* border: 2px solid green; */
-  height: 48px;
+  height: 44px;
   width: 100%;
   text-decoration: none;
   color: var(--black-30);
@@ -199,15 +165,32 @@ main {
   justify-content: flex-start;
   gap: 1rem;
   padding: 4px 12px;
+  border-radius: 8px;
+  position: relative;
+  transition: all 0.25s ease;
 }
 
-.nav-menu .menu-item:hover,
-.nav-menu .menu-item:active {
+.nav-menu .menu-item:hover {
   background-color: var(--white-97);
-  border-radius: 12px;
 }
 
-.nav-item-active {
+/* Windows 11 navigation indicator */
+.nav-menu .menu-item.nav-item-active {
+  background-color: var(--white-97);
+  font-weight: 600;
+  color: var(--black-0);
+}
+
+.nav-menu .menu-item.nav-item-active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  bottom: 12px;
+  width: 4px;
+  background: var(--black-0);
+  border-radius: 100px;
+  transition: top 0.2s, bottom 0.2s;
 }
 
 .nav-menu .menu-item .nav-menu-icon {
@@ -216,19 +199,23 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-color: aquamarin;
 }
 
 .divider {
   width: 100%;
-  height: 1px;
-  background-color: var(--white-97);
+  box-shadow: 0 0 0 0.5px var(--white-90);
+  margin: -1.2rem 0;
 }
 
-.ver-divider {
-  width: 1px;
+.h-divider {
+  width: 100%;
+  box-shadow: 0 0 0 0.5px var(--white-90);
+}
+
+.v-divider {
+  box-shadow: 0 0 0 0.5px var(--white-90);
   height: 1fr;
-  background-color: var(--white-97);
+  background-color: var(--white-90);
 }
 
 .accounts {
@@ -236,10 +223,11 @@ main {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 0.75rem;
 }
 
 .accounts .account {
-  height: 48px;
+  height: 40px;
   width: 100%;
   text-decoration: none;
   color: var(--black-30);
@@ -249,6 +237,7 @@ main {
   justify-content: flex-start;
   gap: 1rem;
   padding: 4px 12px;
+  border-radius: 8px;
   font-size: 0.9rem;
 }
 
@@ -260,9 +249,22 @@ main {
   justify-content: center;
 }
 
-/* -------- */
-/* -------- */
-/* -------- */
+.accounts .account:hover {
+  background-color: var(--white-97);
+}
+
+/* ---------- MAIN CONTENT AREA ---------- */
+
+main {
+  position: relative;
+  top: 0;
+  left: 24%;
+  width: 76%;
+  padding: 2rem 2rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
 
 /* INTRO WRAPPER */
 .intro-cont-wrapper {
@@ -278,8 +280,6 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* background-color: var(--white-97); */
-  z-index: 2;
 }
 
 .heading-left {
@@ -304,12 +304,50 @@ main {
   height: 5px;
   background-color: var(--green-35);
   border-radius: 100%;
-  position: relative;
 }
+
+/* --- Button class --- */
+.btn {
+  box-shadow: 0 0 0 2px var(--black-0);
+  background: transparent;
+  color: var(--black-0);
+  padding: 6px 20px;
+  height: 36px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 1000px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.25s ease-in-out;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--black-0);
+  transition: all 0.25s ease-in-out;
+  z-index: -1;
+}
+
+.btn:hover {
+  color: var(--white-100);
+}
+
+.btn:hover::after {
+  width: 100%;
+}
+
+/* --- */
 
 .intro-cont-wrapper p {
   width: 100%;
-  font-size: 1.2rem;
+  font-size: 1.12rem;
   color: var(--black-30);
   line-height: 1.4;
 }
@@ -319,6 +357,7 @@ main {
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
+  margin-top: 1rem;
 }
 
 .skill-card {
@@ -328,6 +367,7 @@ main {
   border-radius: 12px;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .big-icon {
@@ -355,21 +395,12 @@ main {
   position: absolute;
 }
 
-.big-icon i {
-  font-size: 7rem;
-  color: var(--green-45);
+.big-icon .skill-icon img {
+  height: 7.2rem;
+  width: 7.2rem;
   position: absolute;
   bottom: 3rem;
   right: 3rem;
-  position: absolute;
-}
-
-.big-icon-2 i {
-  color: var(--blue-50);
-}
-
-.big-icon-3 i {
-  color: var(--purple-65);
 }
 
 .ph-caret-up {
@@ -384,18 +415,17 @@ main {
 
 .text-card {
   position: fixed;
-  top: 170px;
+  top: 164px;
   padding: 1.2rem;
   position: absolute;
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
-
   transition: all 0.4s ease-in-out;
 }
 
 .text-card-heading {
-  font-size: 22px;
+  font-size: 1.3rem;
   color: var(--green-45);
   transition: all 0.4s ease-in-out;
   max-width: 160px;
@@ -419,7 +449,7 @@ main {
   transform: translateY(-57%);
 }
 
-/* ABOUT ME WRAPPER */
+/* ---------- ABOUT SECTION ---------- */
 
 .about-cont-wrapper {
   width: 100%;
@@ -433,7 +463,6 @@ main {
   background-color: var(--white-100);
   padding: 1.2rem;
   border-radius: 12px;
-
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -490,11 +519,13 @@ main {
 }
 
 .achievement-icon {
-  font-size: 2rem;
+  height: 1.8rem;
+  width: 1.8rem;
 }
 
 .achievement-title {
   font-size: 1rem;
+  font-weight: 600;
   color: var(--black-0);
 }
 
@@ -535,11 +566,37 @@ main {
   gap: 1rem;
 }
 
+/* --- Link 1 --- */
+.link-1 {
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--black-0);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: fit-content;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.link-1:hover {
+  color: var(--green-45);
+  gap: 8px;
+}
+
+.link-arrow {
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+}
+
+/* --- */
+
 .more-about-link {
   align-self: flex-end;
 }
 
-/* STACK WRAPPER */
+/* ---------- STACK SECTION ---------- */
 
 .stack-cont-wrapper {
   width: 100%;
@@ -548,12 +605,23 @@ main {
   gap: 1.4rem;
 }
 
-.stack-container {
+.stack-container-box {
   width: 100%;
   background-color: var(--white-100);
   border-radius: 12px;
   padding: 1.2rem;
 
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.full-stack-link {
+  align-self: flex-end;
+}
+
+.stack-container {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;

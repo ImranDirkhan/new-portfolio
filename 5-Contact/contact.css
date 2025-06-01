@@ -54,6 +54,10 @@
   overflow: hidden;
 
   position: relative;
+
+  text-decoration: none;
+
+  color: var(--black-0);
 }
 
 .contact-card-logo-bg {
