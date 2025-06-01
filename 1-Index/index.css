@@ -309,8 +309,8 @@ main {
 /* --- Button class --- */
 .btn {
   box-shadow: 0 0 0 2px var(--black-0);
-  background: transparent;
-  color: var(--black-0);
+  background: var(--black-0);
+  color: var(--white-100);
   padding: 6px 20px;
   height: 36px;
   font-size: 0.95rem;
@@ -330,13 +330,15 @@ main {
   left: 0;
   width: 0;
   height: 100%;
-  background-color: var(--black-0);
+  background-color: var(--white-100);
   transition: all 0.25s ease-in-out;
   z-index: -1;
 }
 
 .btn:hover {
-  color: var(--white-100);
+  background-color: var(--white-100);
+  color: var(--black-0);
+  z-index: 1;
 }
 
 .btn:hover::after {
