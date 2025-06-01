@@ -110,6 +110,18 @@
 .contact-card-arrow {
   height: 1.2rem;
   width: 1.2rem;
+  /* transition: all 0.25s ease-in-out; */
+}
+
+.arrow-animate {
+  animation-name: arrow-animation;
+  animation-duration: 2s;
+}
+
+@keyframes arrow-animation {
+  0% {
+    transform: translate(3px, -3px);
+  }
 }
 
 /* --- */
