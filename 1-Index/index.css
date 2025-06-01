@@ -466,6 +466,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .academic-and-non-formal {
@@ -614,6 +615,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .full-stack-link {
@@ -671,6 +673,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .projects {
@@ -734,6 +737,7 @@ main {
   overflow: hidden;
 
   perspective: 1000px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .contact-text {
