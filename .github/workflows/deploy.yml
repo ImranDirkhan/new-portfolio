@@ -2,22 +2,14 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"]  # Runs on pushes to the 'main' branch
+    branches: ["main"]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Move index.html to root
-        run: |
-          cp 1-Index/index.html .  # Copies index.html to root
-          if [ -f "1-Index/style.css" ]; then cp 1-Index/style.css .; fi  # Copies CSS if exists
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - uses: actions/checkout@v4
+      - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+          publish_dir: 1-Index/  # Deploys ONLY this folder
