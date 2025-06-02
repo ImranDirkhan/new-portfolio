@@ -46,7 +46,8 @@
 }
 
 .proj-img-cont img {
-  width: 84%;
+  max-width: 84%;
+  max-height: 84%;
   transition: all 0.4s;
 }
 

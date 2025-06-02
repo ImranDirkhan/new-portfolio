@@ -738,7 +738,8 @@ main {
 }
 
 .project-image-cont img {
-  width: 84%;
+  max-width: 84%;
+  max-height: 84%;
   object-fit: contain;
   transition: all 0.4s;
 }

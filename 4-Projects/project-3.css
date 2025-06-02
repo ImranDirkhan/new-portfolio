@@ -132,7 +132,8 @@
 }
 
 .more-pic {
-  width: 84%;
+  max-width: 84%;
+  max-height: 84%;
 
   /* Newly added */
   object-fit: cover;
