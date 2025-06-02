@@ -694,7 +694,7 @@ main {
 
 .projects {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   /* flex-wrap: wrap; */
   align-items: center;
   justify-content: center;
@@ -706,11 +706,18 @@ main {
   gap: 0.8rem;
   width: 50%;
   height: 100%;
+
+  cursor: pointer;
+}
+
+.project h4 a {
+  text-decoration: none;
+  color: var(--black-0);
 }
 
 .project-image-cont {
   width: 100%;
-  height: fit-content;
+  height: 16rem;
   background-color: var(--white-97);
   border-radius: 8px;
 
@@ -718,12 +725,70 @@ main {
   align-items: center;
   justify-content: center;
 
-  padding: 0.8rem;
+  padding: 1rem;
+
+  position: relative;
+}
+
+.project-1 .project-image-cont {
+  background-color: #faf2eb;
+}
+
+.project-2 .project-image-cont {
+  background-color: #ccd7fa;
 }
 
 .project-image-cont img {
-  width: 100%;
+  width: 84%;
   object-fit: contain;
+  transition: all 0.4s;
+}
+
+.view-project-overlay {
+  background: rgba(var(--black-0-rgb), 0.25);
+  backdrop-filter: blur(5px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  z-index: 1008;
+
+  text-decoration: none;
+
+  visibility: hidden;
+}
+
+.eye-icon {
+  height: 48px;
+  width: 48px;
+  background-color: var(--black-0);
+  border-radius: 100%;
+
+  transition: all 0.25s;
+  transform: scale(0);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eye-icon img {
+  height: 24px;
+  width: 24px;
+}
+
+.view-project-overlay .view-project-text {
+  color: var(--white-100);
+  transform: scale(0);
+  transition: all 0.25s;
 }
 
 .projects-container .btn {

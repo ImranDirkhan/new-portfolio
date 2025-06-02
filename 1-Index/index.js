@@ -17,10 +17,6 @@ const caretUp1 = document.querySelector(".ph-caret-up-1");
 const caretUp2 = document.querySelector(".ph-caret-up-2");
 const caretUp3 = document.querySelector(".ph-caret-up-3");
 
-const project = document.querySelector(".project");
-const projectImageCont = document.querySelector(".project-image-cont");
-const projectImage1 = document.getElementById("project-image-1");
-
 // Set 1
 skillCard1.addEventListener("mouseover", function () {
   bigIcon1.classList.add("big-icon-transformed");
@@ -63,14 +59,44 @@ skillCard3.addEventListener("mouseleave", function () {
   caretUp3.style.transform = "scale(1)";
 });
 
-// Animation on project
-project.addEventListener("mouseover", function () {
-  projectImageCont.style.backdropFilter = "blur(10px)";
-  projectImage1.style.transform = "scale(0.95)";
-  projectImage1.style.transition = "all 0.25s ease-in-out";
-});
+// ------------------- Animation on project
 
-project.addEventListener("mouseleave", function () {
-  projectImageCont.style.backdropFilter = "blur(10px)";
-  projectImage1.style.transform = "scale(1)";
-});
+const project = document.querySelectorAll(".project");
+
+for (let i = 0; i < project.length; i++) {
+  // Get elements relative to the current projCont[i]
+  const currentProjImg = project[i].querySelector(".project-image");
+  const currentViewProjectOverlay = project[i].querySelector(
+    ".view-project-overlay"
+  );
+  const currentEyeIcon = project[i].querySelector(".eye-icon");
+  const currentViewProjectText = project[i].querySelector(".view-project-text");
+
+  project[i].addEventListener("mouseover", function () {
+    if (currentProjImg) currentProjImg.style.transform = "scale(0.95)";
+    if (currentViewProjectOverlay)
+      currentViewProjectOverlay.style.visibility = "visible";
+    if (currentEyeIcon) {
+      currentEyeIcon.style.visibility = "visible";
+      currentEyeIcon.style.transform = "scale(1)";
+    }
+    if (currentViewProjectText) {
+      currentViewProjectText.style.visibility = "visible";
+      currentViewProjectText.style.transform = "scale(1)";
+    }
+  });
+
+  project[i].addEventListener("mouseleave", function () {
+    if (currentProjImg) currentProjImg.style.transform = "scale(1)";
+    if (currentViewProjectOverlay)
+      currentViewProjectOverlay.style.visibility = "hidden";
+    if (currentEyeIcon) {
+      currentEyeIcon.style.visibility = "hidden";
+      currentEyeIcon.style.transform = "scale(0)";
+    }
+    if (currentViewProjectText) {
+      currentViewProjectText.style.visibility = "hidden";
+      currentViewProjectText.style.transform = "scale(0)";
+    }
+  });
+}
