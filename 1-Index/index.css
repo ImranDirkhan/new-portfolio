@@ -585,6 +585,7 @@ main {
 
 /* --- Link 1 --- */
 .link-1 {
+  width: fit-content;
   text-decoration: none;
   font-size: 1.05rem;
   font-weight: 600;
@@ -592,9 +593,7 @@ main {
   display: flex;
   align-items: center;
   gap: 4px;
-  width: fit-content;
   transition: all 0.3s ease;
-  margin-top: 1rem;
 }
 
 .link-1:hover {
