@@ -148,17 +148,22 @@
   }
 
   .stack-container {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+  }
+
+  .stack-item {
+    flex-direction: column;
   }
 
   .stack-logo {
-    height: 84px;
-    width: 84px;
+    max-height: 112px;
+    max-width: 112px;
   }
 
   .stack-logo img {
-    height: 42px;
-    width: 42px;
+    max-height: 56px;
+    max-width: 56px;
   }
 
   .projects {
