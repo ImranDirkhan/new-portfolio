@@ -875,15 +875,3 @@ main {
   height: 700px;
   background: linear-gradient(to top, var(--black-30), var(--white-97));
 }
-
-/* ---------- QUERIES ---------- */
-
-@media (max-width: 544px) {
-  .contact-text {
-    padding: 4rem 1.6rem 0rem 1.6rem;
-  }
-
-  .pattern {
-    bottom: -400px;
-  }
-}
