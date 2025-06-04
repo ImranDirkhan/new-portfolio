@@ -148,26 +148,28 @@
   }
 
   .stack-container {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     justify-items: center;
     align-items: center;
     place-content: center;
   }
 
   .stack-item {
-    height: 33%;
-    width: 33%;
+    width: 100%;
     flex-direction: column;
   }
 
   .stack-logo {
-    max-height: 100%;
-    max-width: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 112px;
+    max-height: 112px;
   }
 
   .stack-logo img {
-    max-height: 42px;
-    max-width: 42px;
+    object-fit: contain;
   }
 
   .projects {
