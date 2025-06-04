@@ -78,8 +78,6 @@ header {
   align-items: center;
   justify-content: center;
   /* flex: none; */
-
-  visibility: hidden;
 }
 
 .header-mobile {
