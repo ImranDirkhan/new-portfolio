@@ -1,25 +1,12 @@
 /* ---------- QUERIES ---------- */
 
 @media (max-width: 544px) {
-  .contact-text {
-    padding: 4rem 1.6rem 0rem 1.6rem;
-  }
-
-  .pattern {
-    bottom: -400px;
-  }
-}
-
-/* ---------- QUERIES ---------- */
-
-@media (max-width: 544px) {
   header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 9vh;
+    visibility: hidden;
+  }
 
-    /* visibility: hidden; */
+  .header-mobile {
+    visibility: visible;
   }
 
   main {
@@ -61,5 +48,13 @@
 
   .all-projects-container {
     grid-template-columns: 1fr;
+  }
+
+  .contact-text {
+    padding: 4rem 1.6rem 0rem 1.6rem;
+  }
+
+  .pattern {
+    bottom: -400px;
   }
 }

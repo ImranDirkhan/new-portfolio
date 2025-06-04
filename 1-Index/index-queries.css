@@ -1,18 +1,10 @@
 /* ---------- QUERIES ---------- */
 
 @media (max-width: 544px) {
-  .contact-text {
-    padding: 4rem 1.6rem 0rem 1.6rem;
+  header {
+    visibility: hidden;
   }
 
-  .pattern {
-    bottom: -400px;
-  }
-}
-
-/* ---------- QUERIES ---------- */
-
-@media (max-width: 544px) {
   .header-mobile {
     visibility: visible;
   }
@@ -175,5 +167,13 @@
 
   .project {
     width: 100%;
+  }
+
+  .contact-text {
+    padding: 4rem 1.6rem 0rem 1.6rem;
+  }
+
+  .pattern {
+    bottom: -400px;
   }
 }

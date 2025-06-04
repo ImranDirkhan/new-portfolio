@@ -101,15 +101,12 @@ for (let i = 0; i < project.length; i++) {
   });
 }
 
-// Mobile header interactions
+// Mobile header interactions ------------------------------------------
+//----------------------------------------------------------------------
+const btn = document.getElementById("btn");
+const nav = document.querySelector(".nav-menu-and-accounts");
 
-const closeBtn = document.querySelector(".ht-close-btn");
-const navAndAccounts = document.querySelector(".nav-menu-and-accounts");
-
-closeBtn.addEventListener("click", function () {
-  if (!navAndAccounts.classList.contains("hidden")) {
-    navAndAccounts.classList.add("hidden");
-  } else if (navAndAccounts.classList.contains("hidden")) {
-    navAndAccounts.classList.remove("hidden");
-  }
+btn.addEventListener("click", function () {
+  btn.classList.toggle("active");
+  nav.classList.toggle("hidden");
 });
