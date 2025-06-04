@@ -100,3 +100,16 @@ for (let i = 0; i < project.length; i++) {
     }
   });
 }
+
+// Mobile header interactions
+
+const closeBtn = document.querySelector(".ht-close-btn");
+const navAndAccounts = document.querySelector(".nav-menu-and-accounts");
+
+closeBtn.addEventListener("click", function () {
+  if (!navAndAccounts.classList.contains("hidden")) {
+    navAndAccounts.classList.add("hidden");
+  } else if (navAndAccounts.classList.contains("hidden")) {
+    navAndAccounts.classList.remove("hidden");
+  }
+});

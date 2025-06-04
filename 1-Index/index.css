@@ -37,7 +37,7 @@
 /* ---------- GENERAL ---------- */
 
 .hidden {
-  visibility: hidden;
+  display: none !important;
 }
 
 .span-helper-1 {
@@ -78,6 +78,44 @@ header {
   align-items: center;
   justify-content: center;
   /* flex: none; */
+
+  visibility: hidden;
+}
+
+.header-mobile {
+  display: flex;
+  flex-direction: column;
+
+  position: fixed;
+  width: 100%;
+
+  z-index: 2000;
+
+  /* visibility: hidden; */
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ht-close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white-100);
+  height: 32px;
+  width: 32px;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-menu-and-accounts {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .header-content {
