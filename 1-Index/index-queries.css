@@ -150,20 +150,24 @@
   .stack-container {
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
+    align-items: center;
+    place-content: center;
   }
 
   .stack-item {
+    height: 33%;
+    width: 33%;
     flex-direction: column;
   }
 
   .stack-logo {
-    max-height: 112px;
-    max-width: 112px;
+    max-height: 100%;
+    max-width: 100%;
   }
 
   .stack-logo img {
-    max-height: 56px;
-    max-width: 56px;
+    max-height: 42px;
+    max-width: 42px;
   }
 
   .projects {
