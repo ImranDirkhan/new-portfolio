@@ -1,3 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
 :root {
   /* COLORS */
 
@@ -52,18 +59,12 @@
 
 /* ------------------------------- */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
-}
-
 body {
   height: 100%;
   width: 100%;
   background-color: var(--white-97);
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 header {
